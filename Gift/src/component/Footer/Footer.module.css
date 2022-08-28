@@ -1,0 +1,14 @@
+#footer {
+    margin-top: 3.5%;
+}
+
+.footer-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer-logo {
+    position: absolute;
+    left: 48.5%;
+    top: 20px;
+}

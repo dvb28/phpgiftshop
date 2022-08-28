@@ -1,0 +1,296 @@
+
+/* Product Item */
+.product-item {
+  background: none;
+  border: 0;
+  overflow: hidden;
+  margin-bottom: 10%;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.product-item::before, .product-item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Product Image Background */
+
+.product-item__img-background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item:hover .product-item__img-background {
+  -webkit-filter: blur(10px);
+  filter: blur(5px);
+  transition: all 0.4s linear;
+}
+
+.product-item__img-background::before {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.03);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  display: block;
+  z-index: 100;
+  -webkit-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+/* Product Item Action Icon */
+
+.product-action__icon {
+  padding: 2% 3%;
+  margin: 0 0.25rem;
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear;
+}
+
+.product-action__icon:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Product Item Hover Filter */
+.product-item__hover--filter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--black-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  z-index: 1;
+  animation: fadeOutRight 0.4s ease-in;
+}
+
+.product-item:hover .product-item__hover--filter {
+  animation: fadeInLeft 0.4s ease-in;
+}
+  
+
+/* Product Item Hover Action */
+
+.product--item__hover--action {
+  display: flex;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 15%;
+  opacity: 0;
+  z-index: 99;
+  transition: all 0.4s linear;
+}
+
+.product-item:hover .product--item__hover--action {
+  opacity: 1;
+}
+
+/* Product Item Image */
+
+.product-item__img {
+    max-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Product Item Mark */
+.product-item__mark {
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  padding: 2px 0.625rem;
+  font-size: 0.8125rem;
+  z-index: 5;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.5s ease;
+  animation: bounceInUp 0.3s linear;
+}
+
+.product-item:hover .product-item__mark {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  animation: fadeInDown 0.3s linear;
+}
+
+/* Product Item Text */
+
+.product-item__text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Product Assess */
+
+.product-item__assess {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.all-style .product-item__text,
+.all-style .product-item__price-and-assess,
+.all-style .product-item__assess {
+  margin-left:  0.7rem;
+  margin-right:  0.7rem;
+}
+
+/* Feature Style Css */
+
+/* Product Assess */
+.feature-style:hover .product-item__assess {
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.feature-style .product-item__assess {
+  position: absolute;
+  right: 5%;
+  top: 3.5%;
+  text-align: left;
+  z-index: 1;
+}
+
+.all-style .product-item__assess i,
+.feature-style .product-item__assess i {
+  color: var(--gray-color);
+}
+
+/* Product Item Text */
+.feature-style .product-item__text {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 5%;
+  z-index: 9;
+  font-size: 1.0625rem;
+  font-weight: bold;
+  padding: 0 1.2rem;
+}
+
+/* All Style */
+
+/* Product Item Text */
+
+.all-style .product-item__text {
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-size: 0.9375rem;
+  font-weight: bold;
+}
+
+/* Product Item Access */
+
+.all-style .product-item__assess i {
+  font-size: 0.65rem;
+}
+
+/* Product Item Price */
+
+.all-style .product-item__price {
+  font-size: 0.9rem;
+}
+
+.all-style .product-item__price-and-assess {
+  display: flex;
+  margin-bottom: 3%;
+  justify-content: space-between;
+}
+
+
+/* Product Item Hover Action */
+
+.all-style .product--item__hover--action{
+  top: 35%;
+}
+
+/* Product Item Action Icon */
+
+.all-style .product-action__icon{
+  padding: 2% 3.5%;
+  font-size: 0.9375rem;
+}
+
+/* Border Animation */
+.draw {
+    transition: color 0.25s;
+  }
+  .draw::before, .draw::after {
+    border: 1px solid transparent;
+    width: 0;
+    height: 0;
+  }
+  .draw::before {
+    top: 0;
+    left: 0;
+  }
+  .draw::after {
+    bottom: 0;
+    right: 0;
+  }
+  .draw:hover::before, .draw:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  .draw:hover::before {
+    border-top-color: rgb(117, 117, 117);
+    border-right-color: rgb(117, 117, 117);
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+  .draw:hover::after {
+    border-bottom-color: rgb(117, 117, 117);
+    border-left-color: rgb(117, 117, 117);
+    transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  }
+  .meet::after {
+    top: 0;
+    left: 0;
+  }
+  .meet:hover::before {
+    border-top-color: rgb(117, 117, 117);
+    border-right-color: rgb(117, 117, 117);
+  }
+  .meet:hover::after {
+    border-bottom-color: rgb(117, 117, 117);
+    border-left-color: rgb(117, 117, 117);
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+  }
+
+
+  @media (min-width: 992px) and (max-width: 1200px) {  
+      /* Feature Style */
+    .feature-style > .product-item__name {
+        font-size: 0.9375rem!important;
+    }
+    
+    .feature-style > .product-item__price {
+        font-size: 0.9375rem!important;
+    }
+
+    .feature-style .product-action__icon {
+      font-size: 0.8125rem;
+    }
+
+    /* All Style */
+    .all-style .product-action__icon {
+        font-size: 0.5rem;
+    }
+}

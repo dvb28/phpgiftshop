@@ -1,0 +1,48 @@
+.help-collapse__header,
+.login-collapse__header {
+  height: var(--header-height);
+}
+
+.help-collapse__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.login-collapse__content {
+  position: absolute;
+  max-width: 480px;
+  width: 480px;
+  left: auto;
+  right: 0;
+  background-color: #fff;
+}
+
+
+.card {
+    padding: 1.5rem;
+}
+
+.collapse-text {
+    max-width: 70%;
+    margin-bottom: 40px;
+}
+
+.collapse-footer {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eaeaea;
+    padding-top: 30px;
+}
+
+
+input[id="overlay-checkbox"]:not(:checked) + .overlay {
+  height: 0;
+  transition-delay: 0.3s;
+}
+
+input[id="overlay-checkbox"]:checked + .overlay {
+  height: 100vh;
+}

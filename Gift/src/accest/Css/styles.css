@@ -1,0 +1,376 @@
+* {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  scroll-behavior:smooth;
+}
+
+/* Chung */
+
+:root {
+  --primary-color: rgb(68, 68, 68);
+  --white-color: white;
+  --black-color: black;
+  --gray-color: #d3ced2;
+  --header-height: 4.375rem;
+  --header-margin: 0.625rem;
+  --slider-margin-top: 100px;
+  --header-z-index: 99999;
+}
+
+
+/* Separate */
+
+.separate-y {
+  border-left: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+.separate-x {
+  border-top: 1px solid rgba(22, 24, 35, 0.12);
+}
+
+/* Button */
+.button {
+  font-size: 0.9rem;
+  border: 0;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button__arrow-chevron {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.button__arrow-chevron,
+.button__icon--plus {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.button__icon--plus {
+  width: 10px;
+  height: 10px;
+}
+.button__icon--plus::before,
+.button__icon--plus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 2px;
+  width: 100%;
+  transform-origin: center;
+  background: currentColor;
+}
+.button__icon--plus::before {
+  transform: rotate3d(0, 0, 1, -90deg);
+}
+.button__arrow-chevron {
+  width: 10px;
+  height: 10px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+}
+.button--link {
+  position: relative;
+  white-space: nowrap;
+}
+.button--link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(1);
+  opacity: 0.6;
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .button--link:hover::after {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition-delay: 0s;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.button--default {
+  color: #fff;
+  text-align: center;
+  padding: 15px 33px;
+  border: 1px solid #000;
+  background: #000;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+  border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media only screen and (min-width: 768px) {
+  .button--default {
+    font: 500 13px "Graphik", sans-serif;
+  }
+}
+.button--default::after {
+  content: attr(data-active-text);
+  font: inherit;
+  color: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button--theme-dark {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: #eaeaea;
+}
+
+.button--theme-light {
+  background-color: #fff;
+  color: #000;
+  border-color: #d1d1d1;
+  transition: all 0.2s ease-in;
+}
+
+.button--theme-light:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: #d1d1d1;
+}
+
+@media only screen and (min-width: 1024px) {
+  .button--default {
+    padding: 16px 66px;
+  }
+}
+.button__text {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.button--icon-plus .button__text {
+  transform: translateX(5px);
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button--icon-plus:not(:disabled):not([data-disabled]):hover .button__text {
+    transform: translateX(0);
+  }
+}
+.button:disabled .button__text,
+.button[data-disabled] .button__text {
+  opacity: 0.6;
+}
+.button__icon--plus {
+  display: inline-block;
+  vertical-align: bottom;
+  opacity: 0;
+  transform: translate3d(-5px, -1px, 0);
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button--icon-plus:not(:disabled):not([data-disabled]):hover
+    .button__icon--plus {
+    opacity: 1;
+    transform: translate3d(3px, -1px, 0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+      opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.15s;
+  }
+}
+.button__arrow {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(-7px, -50%);
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.button--link .button__arrow {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .button__arrow {
+    right: 30px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .button__arrow {
+    transform: translate(0px, -50%);
+    opacity: 1;
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+      opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+.button__arrow-chevron {
+  width: 7.5px;
+  height: 7.5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+  transform: translate(4px, -50%) rotate(-45deg);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .button__arrow-chevron {
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+.button__arrow-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  width: 12px;
+  height: 1.5px;
+  margin: auto;
+  pointer-events: none;
+  background: currentColor;
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .button__arrow-line {
+    transform: none;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+  }
+}
+
+.button-fill {
+  padding: 5px 10px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transition: all 0.2s linear;
+}
+
+.button-border {
+  padding: 5px 10px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--white-color);
+  transition: all 0.2s linear;
+}
+
+.button-fill:hover {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.button-border:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* Primary Animation */
+
+.defaultAnimation {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  transform: translateY(2);
+}
+
+.defaultAnimation::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  opacity: 0.6;
+  transform: scaleX(0);
+  transform-origin: right;
+  background-color: var(--primary-color);
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  transition-delay: 0.2s;
+}
+
+.all-style:hover .defaultAnimation::after,
+.feature-style:hover .defaultAnimation::after,
+.defaultAnimation:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition-delay: 0s;
+}
+
+/* Poper Box */
+
+.popover-body {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.popper-item {
+  display: block;
+  font-size: 1rem;
+  padding: 8px 14px;
+}
+
+.popper-item:hover {
+  background: rgba(22, 24, 35, 0.03) none repeat scroll 0% 0%;
+}
+
+.popper-icon {
+  margin-right: 10px;
+}
+
+/* Animation Class */
+
+.fadeInRight {
+  animation: fadeInRight 0.7s linear;
+}
+

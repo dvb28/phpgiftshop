@@ -1,0 +1,121 @@
+.slider {
+    padding-top: calc(var(--header-height) + var(--header-margin));
+}
+
+.slider-title {
+    position: absolute;
+    color: var(--black);
+    top: 50%;
+    right: 50%;
+    text-align: left;
+    transform: translate(115%, -80%);
+}
+
+
+/* Slider Primary Text */
+
+.slider-primary-text {
+    font-size: 5rem !important;
+}
+
+/* Slider Sub Text */
+
+.slider-sub-text {
+    font-size: 6px;
+    margin-bottom: 6px!important;
+}
+
+/* Slider Button */
+
+.slider-button {
+    padding: 7px 50px;
+    font-size: 2px!important;
+} 
+
+
+/* Responsive */
+@media (min-width: 312px) {
+    .slider-primary-text {
+        font-size: 8px !important;
+        margin-bottom: 4px!important;
+    }
+    .slider-sub-text {
+        font-size: 6px;
+        margin-bottom: 6px!important;
+    }
+    .slider-button {
+        font-size: 6px!important;
+    }  
+}
+
+@media (min-width: 412px) {
+    .slider-primary-text {
+        font-size: 10px !important;
+        margin-bottom: 5px!important;
+    }
+    .slider-sub-text {
+        font-size: 8px;
+        margin-bottom: 7px!important;
+    }
+    .slider-button {
+        font-size: 8px!important;
+    }  
+}
+@media (min-width: 576px) {
+    .slider-primary-text {
+        font-size: 12px !important;
+    }
+    .slider-sub-text {
+        font-size: 10px;
+    }
+    .slider-button {
+        font-size: 10px!important;
+    }
+}
+@media (min-width: 768px) {
+    .slider-primary-text {
+        font-size: 1.25rem !important;
+    }
+    .slider-sub-text {
+        font-size: 12px;
+    }
+    .slider-button {
+        font-size: 12px!important;
+    }
+}
+@media (min-width: 992px) {    
+    .slider-primary-text {
+        font-size: calc(1.3rem + 0.6vw) !important;
+    }
+}
+@media (min-width: 1200px) {
+    .slider-title {
+        transform: translate(115%, -80%);
+    }
+    .slider-primary-text {
+        font-size: 2.5rem !important;
+        margin-bottom: 8px!important;
+    }
+    .slider-sub-text {
+        font-size: 1rem;
+        margin-bottom: 15px!important;
+    }
+    .slider-button {
+        font-size: 0.9rem!important;
+    }
+
+    .carousel-item img {
+        height: 70vh;
+        max-height: 70vh;
+    }
+}
+@media (max-width: 1400px) {
+    .slider-title {
+        position: absolute;
+        color: var(--black);
+        top: 50%;
+        right: 50%;
+        text-align: left;
+        transform: translate(115%, -80%);
+    }
+}

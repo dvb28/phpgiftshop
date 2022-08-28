@@ -1,0 +1,98 @@
+body {
+  height: 2000px !important;
+}
+
+#header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999;
+  margin: var(--header-margin);
+  transition: all 0.2s linear;
+  background-color: transparent;
+}
+
+.header-logo {
+  z-index: 9999;
+  color: var(--primary-color);
+}
+
+/* Header Hide Nav List */
+
+.header-hideNavList {
+  left: 0;
+  top: 100%;
+  padding: 10px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Header Hide Nav Item */
+
+.header-hideNavItem {
+  padding: 5px 0;
+}
+  
+/* Animation Scrolling */
+
+.scrolling:not(.overlay-check) {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9)!important;
+}
+
+/* Login */
+
+/* Avatar */
+
+.login-avatar {
+  width: 25px;
+  margin: 0 5px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Header Btn */
+.button-arrow {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-45%);
+}
+
+/* Action */
+
+.action-login,
+.action-no-login {
+  align-items: center;
+  display: flex;
+}
+
+/* Login Form */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  cursor: url("../../accest//img//cursor-close@2x.png") 20 20, default;
+  cursor: -webkit-image-set(
+        url("../../accest//img//cursor-close@2x.png") 1x,
+        url("../../accest//img//cursor-close@2x.png") 2x
+      ) 20 20, default;
+  
+}
+
+
+@media (max-width: 992px) {  
+  .action-login,
+  .action-no-login {
+      display: none;
+  }
+}
+

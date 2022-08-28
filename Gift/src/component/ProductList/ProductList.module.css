@@ -1,0 +1,24 @@
+/* Product List */
+
+.product-list__title {
+    padding-bottom: 4.5%!important;
+    padding-top: 4.5%!important;
+}
+
+/* Load More Spinner */
+
+.load-more__btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.load-more__btn {
+    transition: all 0.2s linear;
+}
+
+.load-more__spinner {
+  width: 23px;
+  height: 23px;
+  font-size: 0.5rem;
+  display: none;
+}

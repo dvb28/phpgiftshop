@@ -1,0 +1,59 @@
+.register-input__phone,
+.register-input__date,
+.register-input__address,
+.register-input__name,
+.register-input__password,
+.register-input__email,
+.login-input__email {
+    margin-bottom: 14px;
+}
+
+.register-input__title,
+.login-input__title {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.register-input__box input,
+.login-input__box input
+{
+    outline: none;
+    padding: 7px 20px;
+    width: 100%;
+}
+
+.rules,
+.next-register__btn,
+.forgot-password {
+    background-color: transparent;
+    font-size: 0.9rem;
+}
+
+.collapse-text {
+    font-size: 0.9rem;
+}
+
+.login-form,
+.register-form {
+    display: none;   
+}
+
+input[class="error"] {
+    border: 1px solid #ff0000d1;
+    border-radius: 3px;
+}
+
+#date-error,
+#phone-error, 
+#address-error,
+#name-error,
+#email-error,
+#password-error {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: #ff0000d1;
+}
+
+.error {
+    color: #ff0000d1;
+}
